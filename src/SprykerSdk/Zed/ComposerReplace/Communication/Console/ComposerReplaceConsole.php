@@ -22,7 +22,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class ComposerReplaceConsole extends Console
 {
-    public const COMMAND_NAME = 'code:composer:replace';
+    public const COMMAND_NAME = 'dev:composer:replace';
     public const OPTION_DRY_RUN = 'dry-run';
     public const OPTION_DRY_RUN_SHORT = 'd';
 
