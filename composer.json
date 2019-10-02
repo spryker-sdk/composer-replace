@@ -1,0 +1,33 @@
+{
+  "name": "spryker-sdk/composer-replace",
+  "type": "library",
+  "description": "ComposerReplace module",
+  "license": "proprietary",
+  "require": {
+    "php": ">=7.1",
+    "spryker/kernel": "^3.37.4",
+    "spryker/symfony": "^3.3.2"
+  },
+  "require-dev": {
+    "spryker/code-sniffer": "^0.14.6",
+    "spryker/testify": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "SprykerSdk\\": "src/SprykerSdk/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "SprykerSdkTest\\": "tests/SprykerSdkTest/"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+    "cs-check": "phpcs --standard=vendor/spryker/code-sniffer/SprykerStrict/ruleset.xml -p src/ tests/"
+  },
+  "config": {
+    "sort-packages": true
+  }
+}
