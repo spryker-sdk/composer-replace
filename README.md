@@ -1,7 +1,10 @@
-# ComposerReplace [![Build Status](https://travis-ci.org/spryker-sdk/composer-replace.svg)](https://travis-ci.org/spryker-sdk/composer-replace)
-[![Coverage Status](https://coveralls.io/repos/github/spryker-sdk/composer-replace/badge.svg)](https://coveralls.io/github/spryker-sdk/composer-replace)
+# ComposerReplace 
+
+[![Build Status](https://travis-ci.com/spryker-sdk/composer-replace.svg)](https://travis-ci.com/spryker-sdk/composer-replace)
 
 Composer plugin to compute the replace section required for all directories containing a composer.json file in the defined non-split repositories.
+
+This is a Spryker internal tool. Do **not** use this for your project.
 
 ## Installation
 
