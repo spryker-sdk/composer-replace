@@ -165,8 +165,8 @@
             "authors": [
                 {
                     "name": "Filipe Dobreira",
-                    "role": "Developer",
-                    "homepage": "https://github.com/filp"
+                    "homepage": "https://github.com/filp",
+                    "role": "Developer"
                 }
             ],
             "description": "php error handling for cool kids",
@@ -5538,18 +5538,18 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "role": "Developer",
-                    "email": "arne@blankerts.de"
+                    "email": "arne@blankerts.de",
+                    "role": "Developer"
                 },
                 {
                     "name": "Sebastian Heuer",
-                    "role": "Developer",
-                    "email": "sebastian@phpeople.de"
+                    "email": "sebastian@phpeople.de",
+                    "role": "Developer"
                 },
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "Developer",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "Developer"
                 }
             ],
             "description": "Library for handling version information and constraints",
@@ -5960,8 +5960,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "Simple template engine.",
@@ -6849,8 +6849,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
@@ -6960,16 +6960,16 @@
         },
         {
             "name": "spryker/code-sniffer",
-            "version": "0.14.7",
+            "version": "0.14.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spryker/code-sniffer.git",
-                "reference": "348b9f59fce25a90126b8ca9c41731e62df4da1c"
+                "reference": "953955ce883af5cbf5805963d1dec22ae2b7e0c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spryker/code-sniffer/zipball/348b9f59fce25a90126b8ca9c41731e62df4da1c",
-                "reference": "348b9f59fce25a90126b8ca9c41731e62df4da1c",
+                "url": "https://api.github.com/repos/spryker/code-sniffer/zipball/953955ce883af5cbf5805963d1dec22ae2b7e0c1",
+                "reference": "953955ce883af5cbf5805963d1dec22ae2b7e0c1",
                 "shasum": ""
             },
             "require": {
@@ -7009,7 +7009,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2019-09-05T15:48:04+00:00"
+            "time": "2019-10-01T09:26:56+00:00"
         },
         {
             "name": "spryker/propel",
@@ -7388,8 +7388,8 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "role": "Developer",
-                    "email": "arne@blankerts.de"
+                    "email": "arne@blankerts.de",
+                    "role": "Developer"
                 }
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
