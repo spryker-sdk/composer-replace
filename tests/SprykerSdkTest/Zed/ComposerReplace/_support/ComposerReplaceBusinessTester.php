@@ -13,6 +13,7 @@ use SprykerSdk\Zed\ComposerReplace\ComposerReplaceConfig;
 
 /**
  * Inherited Methods
+ *
  * @method void wantToTest($text)
  * @method void wantTo($text)
  * @method void execute($callable)
