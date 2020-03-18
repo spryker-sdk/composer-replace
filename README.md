@@ -9,7 +9,7 @@ This is a Spryker internal tool. Do **not** use this for your project.
 ## Installation
 
 ```
-composer require --dev spryker-sdk/composer-replace
+composer require --dev spryker-sdk/composer-replace:dev-master
 ```
 
 This is a development only "require-dev" module. Please make sure you include it as such.
