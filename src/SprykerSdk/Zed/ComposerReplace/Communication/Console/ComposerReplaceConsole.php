@@ -81,7 +81,7 @@ class ComposerReplaceConsole extends Console
         $isSuccess = true;
 
         foreach ($composerReplaceResultCollectionTransfer->getComposerReplaceResults() as $composerReplaceResultTransfer) {
-            if ($composerReplaceResultTransfer->getComposerPackages()->count() < 0) {
+            if ($composerReplaceResultTransfer->getComposerPackages()->count() > 0) {
                 $isSuccess = false;
             }
         }
