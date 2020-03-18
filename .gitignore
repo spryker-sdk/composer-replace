@@ -15,7 +15,7 @@ nbproject/
 # grunt stuff
 .grunt
 .sass-cache
-/node_modules/
+node_modules/
 
 # tooling
 vendor/
