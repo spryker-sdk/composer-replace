@@ -20,6 +20,8 @@ class ComposerReplaceConfig extends AbstractBundleConfig
      * - Directory must contain a composer.json where the replace section can be found.
      * - Internally we assume that the modules are inside a /Bundles/ModuleName directory.
      *
+     * @api
+     *
      * @return string[]
      */
     public function getPathToRepositories(): array

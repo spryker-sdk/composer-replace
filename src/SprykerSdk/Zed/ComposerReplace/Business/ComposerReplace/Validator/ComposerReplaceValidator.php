@@ -62,8 +62,10 @@ class ComposerReplaceValidator implements ComposerReplaceValidatorInterface
      *
      * @return \Generated\Shared\Transfer\ComposerReplaceResultCollectionTransfer
      */
-    public function validateComposerJsonReplace(ComposerReplaceResultCollectionTransfer $composerReplaceCollectionResultTransfer, string $pathToRepository): ComposerReplaceResultCollectionTransfer
-    {
+    public function validateComposerJsonReplace(
+        ComposerReplaceResultCollectionTransfer $composerReplaceCollectionResultTransfer,
+        string $pathToRepository
+    ): ComposerReplaceResultCollectionTransfer {
         $composerReplaceResultTransfer = new ComposerReplaceResultTransfer();
         $composerReplaceResultTransfer->setPathToRepository($pathToRepository);
 
@@ -81,8 +83,10 @@ class ComposerReplaceValidator implements ComposerReplaceValidatorInterface
      *
      * @return \Generated\Shared\Transfer\ComposerReplaceResultTransfer
      */
-    protected function addMissingComposerPackages(ComposerReplaceResultTransfer $composerReplaceResultTransfer, string $pathToRepository): ComposerReplaceResultTransfer
-    {
+    protected function addMissingComposerPackages(
+        ComposerReplaceResultTransfer $composerReplaceResultTransfer,
+        string $pathToRepository
+    ): ComposerReplaceResultTransfer {
         foreach ($this->getMissingComposerPackageNames($pathToRepository) as $missingComposerPackageName) {
             $composerPackageTransfer = new ComposerPackageTransfer();
             $composerPackageTransfer
@@ -101,8 +105,10 @@ class ComposerReplaceValidator implements ComposerReplaceValidatorInterface
      *
      * @return \Generated\Shared\Transfer\ComposerReplaceResultTransfer
      */
-    protected function addObsoleteComposerPackages(ComposerReplaceResultTransfer $composerReplaceResultTransfer, string $pathToRepository): ComposerReplaceResultTransfer
-    {
+    protected function addObsoleteComposerPackages(
+        ComposerReplaceResultTransfer $composerReplaceResultTransfer,
+        string $pathToRepository
+    ): ComposerReplaceResultTransfer {
         foreach ($this->getObsoleteComposerPackageNames($pathToRepository) as $obsoleteComposerPackageName) {
             $composerPackageTransfer = new ComposerPackageTransfer();
             $composerPackageTransfer

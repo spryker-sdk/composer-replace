@@ -1,8 +1,17 @@
 <?php
+
+/**
+ * Copyright © 2016-present Spryker Systems GmbH. All rights reserved.
+ * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
+ */
+
 namespace SprykerSdkTest\Zed\ComposerReplace;
+
+use Codeception\Actor;
 
 /**
  * Inherited Methods
+ *
  * @method void wantToTest($text)
  * @method void wantTo($text)
  * @method void execute($callable)
@@ -15,8 +24,8 @@ namespace SprykerSdkTest\Zed\ComposerReplace;
  * @method void pause()
  *
  * @SuppressWarnings(PHPMD)
-*/
-class ComposerReplaceCommunicationTester extends \Codeception\Actor
+ */
+class ComposerReplaceCommunicationTester extends Actor
 {
     use _generated\ComposerReplaceCommunicationTesterActions;
 }
