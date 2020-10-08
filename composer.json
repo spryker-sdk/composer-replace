@@ -9,11 +9,9 @@
     "spryker/symfony": "^3.3.2"
   },
   "require-dev": {
-    "sllh/composer-versions-check": "^2.0",
     "spryker/code-sniffer": "*",
     "spryker/testify": "*",
-    "spryker/transfer": "^3.21.0",
-    "webmozart/glob": "^4.1"
+    "spryker/transfer": "^3.21.0"
   },
   "autoload": {
     "psr-4": {
