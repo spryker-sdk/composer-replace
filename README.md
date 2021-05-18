@@ -1,4 +1,4 @@
-# ComposerReplace 
+# ComposerReplace Module
 [![CI](https://github.com/spryker-sdk/composer-replace/workflows/CI/badge.svg?branch=master)](https://github.com/spryker-sdk/composer-replace/actions?query=workflow%3ACI+branch%3Amaster)
 [![Latest Stable Version](https://poser.pugx.org/spryker-sdk/composer-replace/v/stable.svg)](https://packagist.org/packages/spryker-sdk/composer-replace)
 [![Minimum PHP Version](http://img.shields.io/badge/php-%3E%3D%207.3-8892BF.svg)](https://php.net/)
