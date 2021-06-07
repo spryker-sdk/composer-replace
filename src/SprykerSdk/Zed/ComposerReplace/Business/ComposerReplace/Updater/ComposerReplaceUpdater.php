@@ -104,9 +104,7 @@ class ComposerReplaceUpdater implements ComposerReplaceUpdaterInterface
     {
         ksort($composerJsonArray['replace']);
 
-        $encodedJson4Spaces = json_encode($composerJsonArray, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
-        $encodedJson2Spaces = preg_replace('/^(  +?)\\1(?=[^ ])/m', '$1', $encodedJson4Spaces) . "\n";
-
-        file_put_contents($pathToComposerJson, $encodedJson2Spaces);
+        $encodedJson = json_encode($composerJsonArray, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+        file_put_contents($pathToComposerJson, $encodedJson . "\n");
     }
 }
