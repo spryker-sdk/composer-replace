@@ -7,22 +7,21 @@
 
 namespace SprykerSdk\Zed\ComposerReplace\Business;
 
-use Generated\Shared\Transfer\ComposerReplaceResultCollectionTransfer;
-use Spryker\Zed\Kernel\Business\AbstractFacade;
+use SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultCollectionTransfer;
 
 /**
  * @api
- *
- * @method \SprykerSdk\Zed\ComposerReplace\Business\ComposerReplaceBusinessFactory getFactory()
  */
-class ComposerReplaceFacade extends AbstractFacade implements ComposerReplaceFacadeInterface
+class ComposerReplaceFacade implements ComposerReplaceFacadeInterface
 {
+    protected ComposerReplaceBusinessFactory $factory;
+
     /**
      * {@inheritDoc}
      *
      * @api
      *
-     * @return \Generated\Shared\Transfer\ComposerReplaceResultCollectionTransfer
+     * @return \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultCollectionTransfer
      */
     public function validate(): ComposerReplaceResultCollectionTransfer
     {
@@ -34,10 +33,22 @@ class ComposerReplaceFacade extends AbstractFacade implements ComposerReplaceFac
      *
      * @api
      *
-     * @return \Generated\Shared\Transfer\ComposerReplaceResultCollectionTransfer
+     * @return \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultCollectionTransfer
      */
     public function update(): ComposerReplaceResultCollectionTransfer
     {
         return $this->getFactory()->createComposerReplaceUpdater()->update();
+    }
+
+    /**
+     * @return \SprykerSdk\Zed\ComposerReplace\Business\ComposerReplaceBusinessFactory
+     */
+    protected function getFactory(): ComposerReplaceBusinessFactory
+    {
+        if (!$this->factory) {
+            $this->factory = new ComposerReplaceBusinessFactory();
+        }
+
+        return $this->factory;
     }
 }

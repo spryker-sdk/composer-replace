@@ -7,7 +7,7 @@
 
 namespace SprykerSdk\Zed\ComposerReplace\Business;
 
-use Generated\Shared\Transfer\ComposerReplaceResultCollectionTransfer;
+use SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultCollectionTransfer;
 
 interface ComposerReplaceFacadeInterface
 {
@@ -18,7 +18,7 @@ interface ComposerReplaceFacadeInterface
      *
      * @api
      *
-     * @return \Generated\Shared\Transfer\ComposerReplaceResultCollectionTransfer
+     * @return \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultCollectionTransfer
      */
     public function validate(): ComposerReplaceResultCollectionTransfer;
 
@@ -29,7 +29,7 @@ interface ComposerReplaceFacadeInterface
      *
      * @api
      *
-     * @return \Generated\Shared\Transfer\ComposerReplaceResultCollectionTransfer
+     * @return \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultCollectionTransfer
      */
     public function update(): ComposerReplaceResultCollectionTransfer;
 }

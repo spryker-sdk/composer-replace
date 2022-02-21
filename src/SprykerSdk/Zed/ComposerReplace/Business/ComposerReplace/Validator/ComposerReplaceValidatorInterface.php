@@ -7,12 +7,12 @@
 
 namespace SprykerSdk\Zed\ComposerReplace\Business\ComposerReplace\Validator;
 
-use Generated\Shared\Transfer\ComposerReplaceResultCollectionTransfer;
+use SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultCollectionTransfer;
 
 interface ComposerReplaceValidatorInterface
 {
     /**
-     * @return \Generated\Shared\Transfer\ComposerReplaceResultCollectionTransfer
+     * @return \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultCollectionTransfer
      */
     public function validate(): ComposerReplaceResultCollectionTransfer;
 }

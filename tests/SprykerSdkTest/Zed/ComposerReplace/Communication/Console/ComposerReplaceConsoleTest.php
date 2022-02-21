@@ -8,9 +8,9 @@
 namespace SprykerSdkTest\Zed\ComposerConstrainer\Communication\Console;
 
 use Codeception\Test\Unit;
-use Generated\Shared\Transfer\ComposerPackageTransfer;
-use Generated\Shared\Transfer\ComposerReplaceResultCollectionTransfer;
-use Generated\Shared\Transfer\ComposerReplaceResultTransfer;
+use SprykerSdk\Shared\ComposerReplace\Transfer\ComposerPackageTransfer;
+use SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultCollectionTransfer;
+use SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultTransfer;
 use SprykerSdk\Zed\ComposerReplace\Communication\Console\ComposerReplaceConsole;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;

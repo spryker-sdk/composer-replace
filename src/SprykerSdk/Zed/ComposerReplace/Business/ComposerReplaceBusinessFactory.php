@@ -7,17 +7,19 @@
 
 namespace SprykerSdk\Zed\ComposerReplace\Business;
 
-use Spryker\Zed\Kernel\Business\AbstractBusinessFactory;
 use SprykerSdk\Zed\ComposerReplace\Business\ComposerReplace\Updater\ComposerReplaceUpdater;
 use SprykerSdk\Zed\ComposerReplace\Business\ComposerReplace\Updater\ComposerReplaceUpdaterInterface;
 use SprykerSdk\Zed\ComposerReplace\Business\ComposerReplace\Validator\ComposerReplaceValidator;
 use SprykerSdk\Zed\ComposerReplace\Business\ComposerReplace\Validator\ComposerReplaceValidatorInterface;
+use SprykerSdk\Zed\ComposerReplace\ComposerReplaceConfig;
 
-/**
- * @method \SprykerSdk\Zed\ComposerReplace\ComposerReplaceConfig getConfig()
- */
-class ComposerReplaceBusinessFactory extends AbstractBusinessFactory
+class ComposerReplaceBusinessFactory
 {
+    /**
+     * @var \SprykerSdk\Zed\ComposerReplace\ComposerReplaceConfig
+     */
+    protected ComposerReplaceConfig $config;
+
     /**
      * @return \SprykerSdk\Zed\ComposerReplace\Business\ComposerReplace\Validator\ComposerReplaceValidatorInterface
      */
@@ -32,5 +34,17 @@ class ComposerReplaceBusinessFactory extends AbstractBusinessFactory
     public function createComposerReplaceUpdater(): ComposerReplaceUpdaterInterface
     {
         return new ComposerReplaceUpdater($this->createComposerReplaceValidator());
+    }
+
+    /**
+     * @return \SprykerSdk\Zed\ComposerReplace\ComposerReplaceConfig
+     */
+    protected function getConfig(): ComposerReplaceConfig
+    {
+        if (!$this->config) {
+            $this->config = new ComposerReplaceConfig();
+        }
+
+        return $this->config;
     }
 }

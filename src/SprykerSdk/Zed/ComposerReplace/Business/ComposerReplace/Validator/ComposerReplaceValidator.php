@@ -7,9 +7,9 @@
 
 namespace SprykerSdk\Zed\ComposerReplace\Business\ComposerReplace\Validator;
 
-use Generated\Shared\Transfer\ComposerPackageTransfer;
-use Generated\Shared\Transfer\ComposerReplaceResultCollectionTransfer;
-use Generated\Shared\Transfer\ComposerReplaceResultTransfer;
+use SprykerSdk\Shared\ComposerReplace\Transfer\ComposerPackageTransfer;
+use SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultCollectionTransfer;
+use SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultTransfer;
 use SprykerSdk\Zed\ComposerReplace\ComposerReplaceConfig;
 use Symfony\Component\Finder\Finder;
 
@@ -39,12 +39,12 @@ class ComposerReplaceValidator implements ComposerReplaceValidatorInterface
     }
 
     /**
-     * @var \Generated\Shared\Transfer\ComposerReplaceResultCollectionTransfer
+     * @var \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultCollectionTransfer
      */
     protected $replaceValidationResultTransfer;
 
     /**
-     * @return \Generated\Shared\Transfer\ComposerReplaceResultCollectionTransfer
+     * @return \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultCollectionTransfer
      */
     public function validate(): ComposerReplaceResultCollectionTransfer
     {
@@ -57,10 +57,10 @@ class ComposerReplaceValidator implements ComposerReplaceValidatorInterface
     }
 
     /**
-     * @param \Generated\Shared\Transfer\ComposerReplaceResultCollectionTransfer $composerReplaceCollectionResultTransfer
+     * @param \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultCollectionTransfer $composerReplaceCollectionResultTransfer
      * @param string $pathToRepository
      *
-     * @return \Generated\Shared\Transfer\ComposerReplaceResultCollectionTransfer
+     * @return \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultCollectionTransfer
      */
     public function validateComposerJsonReplace(
         ComposerReplaceResultCollectionTransfer $composerReplaceCollectionResultTransfer,
@@ -78,10 +78,10 @@ class ComposerReplaceValidator implements ComposerReplaceValidatorInterface
     }
 
     /**
-     * @param \Generated\Shared\Transfer\ComposerReplaceResultTransfer $composerReplaceResultTransfer
+     * @param \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultTransfer $composerReplaceResultTransfer
      * @param string $pathToRepository
      *
-     * @return \Generated\Shared\Transfer\ComposerReplaceResultTransfer
+     * @return \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultTransfer
      */
     protected function addMissingComposerPackages(
         ComposerReplaceResultTransfer $composerReplaceResultTransfer,
@@ -100,10 +100,10 @@ class ComposerReplaceValidator implements ComposerReplaceValidatorInterface
     }
 
     /**
-     * @param \Generated\Shared\Transfer\ComposerReplaceResultTransfer $composerReplaceResultTransfer
+     * @param \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultTransfer $composerReplaceResultTransfer
      * @param string $pathToRepository
      *
-     * @return \Generated\Shared\Transfer\ComposerReplaceResultTransfer
+     * @return \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultTransfer
      */
     protected function addObsoleteComposerPackages(
         ComposerReplaceResultTransfer $composerReplaceResultTransfer,

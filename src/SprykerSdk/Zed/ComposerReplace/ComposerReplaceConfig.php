@@ -7,9 +7,7 @@
 
 namespace SprykerSdk\Zed\ComposerReplace;
 
-use Spryker\Zed\Kernel\AbstractBundleConfig;
-
-class ComposerReplaceConfig extends AbstractBundleConfig
+class ComposerReplaceConfig
 {
     public const TYPE_MISSING = 'missing';
     public const TYPE_OBSOLETE = 'obsolete';

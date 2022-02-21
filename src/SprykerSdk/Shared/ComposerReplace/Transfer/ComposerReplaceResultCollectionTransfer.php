@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * Copyright © 2016-present Spryker Systems GmbH. All rights reserved.
+ * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
+ */
+
+namespace SprykerSdk\Shared\ComposerReplace\Transfer;
+
+class ComposerReplaceResultCollectionTransfer
+{
+    /**
+     * @var \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResult[]
+     */
+    protected array $composerReplaceResults;
+    
+    /**
+     * @return \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResult[]
+     */
+    public function getComposerReplaceResults(): array
+    {
+        return $this->composerReplaceResults;
+    }
+
+    /**
+     * @param array $composerReplaceResults
+     *
+     * @return $this
+     */
+    public function setComposerReplaceResults(array $composerReplaceResults)
+    {
+        $this->composerReplaceResults = $composerReplaceResults;
+
+        return $this;
+    }
+}

@@ -5,13 +5,11 @@
     "license": "proprietary",
     "require": {
         "php": ">=7.3",
-        "spryker/kernel": "^3.42",
         "spryker/symfony": "^3.3.2"
     },
     "require-dev": {
         "spryker/code-sniffer": "*",
-        "spryker/testify": "*",
-        "spryker/transfer": "^3.21.0"
+        "spryker/testify": "*"
     },
     "autoload": {
         "psr-4": {
