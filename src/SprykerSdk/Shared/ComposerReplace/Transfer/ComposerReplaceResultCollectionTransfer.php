@@ -12,7 +12,7 @@ class ComposerReplaceResultCollectionTransfer
     /**
      * @var \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResult[]
      */
-    protected array $composerReplaceResults;
+    protected $composerReplaceResults;
     
     /**
      * @return \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResult[]

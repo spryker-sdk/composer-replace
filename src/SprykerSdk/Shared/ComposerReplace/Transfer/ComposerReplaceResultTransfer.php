@@ -12,12 +12,12 @@ class ComposerReplaceResultTransfer
     /**
      * @var string
      */
-    protected string $pathToRepository;
+    protected $pathToRepository;
 
     /**
      * @var \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerPackageTransfer[]
      */
-    protected array $composerPackages;
+    protected $composerPackages;
 
     /**
      * @return string

@@ -12,12 +12,12 @@ class ComposerPackageTransfer
     /**
      * @var string
      */
-    protected string $name;
+    protected $name;
 
     /**
      * @var string
      */
-    protected string $type;
+    protected $type;
 
     /**
      * @return string
