@@ -10,12 +10,12 @@ namespace SprykerSdk\Shared\ComposerReplace\Transfer;
 class ComposerReplaceResultCollectionTransfer
 {
     /**
-     * @var \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResult[]
+     * @var array<\SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResult>
      */
     protected $composerReplaceResults;
-    
+
     /**
-     * @return \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResult[]
+     * @return array<\SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResult>
      */
     public function getComposerReplaceResults(): array
     {

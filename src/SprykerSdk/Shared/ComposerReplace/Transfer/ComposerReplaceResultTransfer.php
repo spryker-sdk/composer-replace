@@ -15,7 +15,7 @@ class ComposerReplaceResultTransfer
     protected $pathToRepository;
 
     /**
-     * @var \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerPackageTransfer[]
+     * @var arra<\SprykerSdk\Shared\ComposerReplace\Transfer\ComposerPackageTransfer>
      */
     protected $composerPackages;
 
@@ -28,7 +28,7 @@ class ComposerReplaceResultTransfer
     }
 
     /**
-     * @return \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerPackageTransfer[]
+     * @return array<\SprykerSdk\Shared\ComposerReplace\Transfer\ComposerPackageTransfer>
      */
     public function getComposerPackages(): array
     {
@@ -36,7 +36,7 @@ class ComposerReplaceResultTransfer
     }
 
     /**
-     * @param \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerPackageTransfer[] $composerPackages
+     * @param array<\SprykerSdk\Shared\ComposerReplace\Transfer\ComposerPackageTransfer> $composerPackages
      *
      * @return $this
      */
