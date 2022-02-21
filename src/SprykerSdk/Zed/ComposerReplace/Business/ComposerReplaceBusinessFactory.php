@@ -18,7 +18,7 @@ class ComposerReplaceBusinessFactory
     /**
      * @var \SprykerSdk\Zed\ComposerReplace\ComposerReplaceConfig
      */
-    protected ComposerReplaceConfig $config;
+    protected $config;
 
     /**
      * @return \SprykerSdk\Zed\ComposerReplace\Business\ComposerReplace\Validator\ComposerReplaceValidatorInterface

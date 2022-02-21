@@ -28,7 +28,7 @@ class ComposerReplaceConsole extends Command
     /**
      * @var \SprykerSdk\Zed\ComposerReplace\Business\ComposerReplaceFacadeInterface 
      */
-    protected ComposerReplaceFacadeInterface $facade;
+    protected $facade;
 
     /**
      * @return void
