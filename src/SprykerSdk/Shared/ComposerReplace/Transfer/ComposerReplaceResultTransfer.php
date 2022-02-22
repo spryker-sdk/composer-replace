@@ -15,7 +15,7 @@ class ComposerReplaceResultTransfer
     protected $pathToRepository;
 
     /**
-     * @var arra<\SprykerSdk\Shared\ComposerReplace\Transfer\ComposerPackageTransfer>
+     * @var \SprykerSdk\Shared\ComposerReplace\Transfer\arra|\SprykerSdk\Shared\ComposerReplace\Transfer\ComposerPackageTransfer[]
      */
     protected $composerPackages;
 

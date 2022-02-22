@@ -9,7 +9,14 @@ namespace SprykerSdk\Zed\ComposerReplace;
 
 class ComposerReplaceConfig
 {
+    /**
+     * @var string
+     */
     public const TYPE_MISSING = 'missing';
+
+    /**
+     * @var string
+     */
     public const TYPE_OBSOLETE = 'obsolete';
 
     /**
@@ -20,7 +27,7 @@ class ComposerReplaceConfig
      *
      * @api
      *
-     * @return string[]
+     * @return array<string>
      */
     public function getPathToRepositories(): array
     {

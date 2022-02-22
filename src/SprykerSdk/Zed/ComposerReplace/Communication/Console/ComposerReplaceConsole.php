@@ -21,12 +21,23 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class ComposerReplaceConsole extends Command
 {
+    /**
+     * @var string
+     */
     public const COMMAND_NAME = 'dev:composer:replace';
+
+    /**
+     * @var string
+     */
     public const OPTION_DRY_RUN = 'dry-run';
+
+    /**
+     * @var string
+     */
     public const OPTION_DRY_RUN_SHORT = 'd';
 
     /**
-     * @var \SprykerSdk\Zed\ComposerReplace\Business\ComposerReplaceFacadeInterface 
+     * @var \SprykerSdk\Zed\ComposerReplace\Business\ComposerReplaceFacadeInterface
      */
     protected $facade;
 

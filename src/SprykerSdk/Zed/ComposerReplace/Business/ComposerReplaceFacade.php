@@ -15,7 +15,7 @@ use SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultCollectionTr
 class ComposerReplaceFacade implements ComposerReplaceFacadeInterface
 {
     /**
-     * @var \SprykerSdk\Zed\ComposerReplace\Business\ComposerReplaceBusinessFactory 
+     * @var \SprykerSdk\Zed\ComposerReplace\Business\ComposerReplaceBusinessFactory
      */
     protected $factory;
 

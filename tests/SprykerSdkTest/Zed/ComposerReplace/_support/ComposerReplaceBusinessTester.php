@@ -78,7 +78,7 @@ class ComposerReplaceBusinessTester extends Actor
     /**
      * @param string $virtualDirectory
      *
-     * @return object|\SprykerSdk\Zed\ComposerReplace\ComposerReplaceConfig
+     * @return \SprykerSdk\Zed\ComposerReplace\ComposerReplaceConfig|object
      */
     protected function getConfigMock(string $virtualDirectory)
     {
