@@ -214,6 +214,8 @@ class ComposerReplaceConsole extends Command
     }
 
     /**
+     * @param \SprykerSdk\Zed\ComposerReplace\Business\ComposerReplaceFacadeInterface $facade
+     *
      * @return $this
      */
     public function setFacade(ComposerReplaceFacadeInterface $facade)
