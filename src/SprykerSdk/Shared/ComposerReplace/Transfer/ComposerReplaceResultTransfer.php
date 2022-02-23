@@ -17,7 +17,7 @@ class ComposerReplaceResultTransfer
     /**
      * @var array<\SprykerSdk\Shared\ComposerReplace\Transfer\ComposerPackageTransfer>
      */
-    protected $composerPackages = [];
+    protected $composerPackageTransfers = [];
 
     /**
      * @return string
@@ -32,7 +32,7 @@ class ComposerReplaceResultTransfer
      */
     public function getComposerPackages(): array
     {
-        return $this->composerPackages;
+        return $this->composerPackageTransfers;
     }
 
     /**
@@ -40,9 +40,9 @@ class ComposerReplaceResultTransfer
      *
      * @return $this
      */
-    public function setComposerPackages(array $composerPackages)
+    public function setComposerPackages(array $composerPackageTransfers)
     {
-        $this->composerPackages = $composerPackages;
+        $this->composerPackageTransfers = $composerPackageTransfers;
 
         return $this;
     }
@@ -54,7 +54,7 @@ class ComposerReplaceResultTransfer
      */
     public function addComposerPackage(ComposerPackageTransfer $composerPackage)
     {
-        $this->composerPackages[] = $composerPackage;
+        $this->composerPackageTransfers[] = $composerPackage;
 
         return $this;
     }

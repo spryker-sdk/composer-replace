@@ -204,7 +204,7 @@ class ComposerReplaceConsole extends Command
     /**
      * @return \SprykerSdk\Zed\ComposerReplace\Business\ComposerReplaceFacadeInterface
      */
-    public function getFacade(): ComposerReplaceFacadeInterface
+    protected function getFacade(): ComposerReplaceFacadeInterface
     {
         if (!$this->facade) {
             $this->facade = new ComposerReplaceFacade();

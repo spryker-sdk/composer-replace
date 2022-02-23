@@ -12,24 +12,24 @@ class ComposerReplaceResultCollectionTransfer
     /**
      * @var array<\SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultTransfer>
      */
-    protected $composerReplaceResults = [];
+    protected $composerReplaceResultTransfers = [];
 
     /**
      * @return array<\SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultTransfer>
      */
     public function getComposerReplaceResults(): array
     {
-        return $this->composerReplaceResults;
+        return $this->composerReplaceResultTransfers;
     }
 
     /**
-     * @param array<\SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultTransfer> $composerReplaceResults
+     * @param array<\SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultTransfer> $composerReplaceResultTransfers
      *
      * @return $this
      */
-    public function setComposerReplaceResults(array $composerReplaceResults)
+    public function setComposerReplaceResults(array $composerReplaceResultTransfers)
     {
-        $this->composerReplaceResults = $composerReplaceResults;
+        $this->composerReplaceResultTransfers = $composerReplaceResultTransfers;
 
         return $this;
     }
@@ -41,7 +41,7 @@ class ComposerReplaceResultCollectionTransfer
      */
     public function addComposerReplaceResult(ComposerReplaceResultTransfer $composerReplaceResult)
     {
-        $this->composerReplaceResults[] = $composerReplaceResult;
+        $this->composerReplaceResultTransfers[] = $composerReplaceResult;
 
         return $this;
     }
