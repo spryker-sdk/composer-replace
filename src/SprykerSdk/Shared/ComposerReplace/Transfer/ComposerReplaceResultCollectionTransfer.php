@@ -35,13 +35,13 @@ class ComposerReplaceResultCollectionTransfer
     }
 
     /**
-     * @param \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultTransfer $composerReplaceResult
+     * @param \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultTransfer $composerReplaceResultTransfer
      *
      * @return $this
      */
-    public function addComposerReplaceResult(ComposerReplaceResultTransfer $composerReplaceResult)
+    public function addComposerReplaceResult(ComposerReplaceResultTransfer $composerReplaceResultTransfer)
     {
-        $this->composerReplaceResultTransfers[] = $composerReplaceResult;
+        $this->composerReplaceResultTransfers[] = $composerReplaceResultTransfer;
 
         return $this;
     }
