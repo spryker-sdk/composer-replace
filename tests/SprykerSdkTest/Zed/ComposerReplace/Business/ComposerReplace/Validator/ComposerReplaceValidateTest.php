@@ -5,7 +5,7 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace SprykerSdkTest\Zed\ComposerReplace\Business\ComposerReplace\Updater;
+namespace SprykerSdkTest\Zed\ComposerReplace\Business\ComposerReplace\Validator;
 
 use Codeception\Test\Unit;
 use SprykerSdk\Zed\ComposerReplace\Business\ComposerReplace\Validator\ComposerReplaceValidator;

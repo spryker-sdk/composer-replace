@@ -11,6 +11,7 @@ use Codeception\Test\Unit;
 use SprykerSdk\Shared\ComposerReplace\Transfer\ComposerPackageTransfer;
 use SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultCollectionTransfer;
 use SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultTransfer;
+use SprykerSdk\Zed\ComposerReplace\Business\ComposerReplaceFacadeInterface;
 use SprykerSdk\Zed\ComposerReplace\Communication\Console\ComposerReplaceConsole;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
@@ -18,22 +19,17 @@ use Symfony\Component\Console\Tester\CommandTester;
 class ComposerReplaceConsoleTest extends Unit
 {
     /**
-     * @var \SprykerSdkTest\Zed\ComposerReplace\ComposerReplaceCommunicationTester
-     */
-    protected $tester;
-
-    /**
      * @return void
      */
     public function testExecuteReturnsSuccessCodeWhenAllNonSplitModulesListedInComposersReplaceSection(): void
     {
         // Arrange
-        $this->tester->mockFacadeMethod('validate', function () {
-            return new ComposerReplaceResultCollectionTransfer();
-        });
+        $facade = $this->createMock(ComposerReplaceFacadeInterface::class);
+        $facade->method('validate')
+            ->willReturn(new ComposerReplaceResultCollectionTransfer());
 
         $composerReplaceConsole = new ComposerReplaceConsole();
-        $composerReplaceConsole->setFacade($this->tester->getFacade());
+        $composerReplaceConsole->setFacade($facade);
 
         $application = new Application();
         $application->add($composerReplaceConsole);
@@ -45,7 +41,7 @@ class ComposerReplaceConsoleTest extends Unit
         $commandTester->execute(['-d' => true]);
 
         // Assert
-        $this->assertSame(ComposerReplaceConsole::CODE_SUCCESS, $commandTester->getStatusCode(), 'Expected success result code "0" but got error code "1".');
+        $this->assertSame(ComposerReplaceConsole::SUCCESS, $commandTester->getStatusCode(), 'Expected success result code "0" but got error code "1".');
     }
 
     /**
@@ -54,17 +50,17 @@ class ComposerReplaceConsoleTest extends Unit
     public function testExecuteReturnsErrorCodeWhenOneOrMoreNonSplitModulesNotListedInComposersReplaceSection(): void
     {
         // Arrange
-        $this->tester->mockFacadeMethod('validate', function () {
-            $composerReplaceResultTransfer = new ComposerReplaceResultTransfer();
-            $composerReplaceResultTransfer->addComposerPackage(new ComposerPackageTransfer());
-            $composerReplaceResultCollectionTransfer = new ComposerReplaceResultCollectionTransfer();
-            $composerReplaceResultCollectionTransfer->addComposerReplaceResult($composerReplaceResultTransfer);
+        $composerReplaceResultTransfer = new ComposerReplaceResultTransfer();
+        $composerReplaceResultTransfer->addComposerPackage(new ComposerPackageTransfer());
+        $composerReplaceResultCollectionTransfer = new ComposerReplaceResultCollectionTransfer();
+        $composerReplaceResultCollectionTransfer->addComposerReplaceResult($composerReplaceResultTransfer);
 
-            return $composerReplaceResultCollectionTransfer;
-        });
+        $facade = $this->createMock(ComposerReplaceFacadeInterface::class);
+        $facade->method('validate')
+            ->willReturn($composerReplaceResultCollectionTransfer);
 
         $composerReplaceConsole = new ComposerReplaceConsole();
-        $composerReplaceConsole->setFacade($this->tester->getFacade());
+        $composerReplaceConsole->setFacade($facade);
 
         $application = new Application();
         $application->add($composerReplaceConsole);
@@ -76,6 +72,6 @@ class ComposerReplaceConsoleTest extends Unit
         $commandTester->execute(['-d' => true]);
 
         // Assert
-        $this->assertSame(ComposerReplaceConsole::CODE_ERROR, $commandTester->getStatusCode(), 'Expected error code "1" but got success code "0".');
+        $this->assertSame(ComposerReplaceConsole::FAILURE, $commandTester->getStatusCode(), 'Expected error code "1" but got success code "0".');
     }
 }

@@ -7,36 +7,11 @@ paths:
 coverage:
     enabled: true
     remote: false
-    whitelist:
-        include:
-            - '../../../../src/*'
+
 suites:
     Business:
         path: Business
-        class_name: ComposerReplaceBusinessTester
+        actor: ComposerReplaceBusinessTester
         modules:
             enabled:
-                - \SprykerTest\Shared\Testify\Helper\Environment
-                - \SprykerTest\Shared\Testify\Helper\LocatorHelper
-                - \SprykerTest\Shared\Testify\Helper\VirtualFilesystemHelper
-                - \SprykerTest\Shared\Transfer\Helper\TransferGenerateHelper
-
-    Communication:
-        path: Communication
-        class_name: ComposerReplaceCommunicationTester
-        modules:
-            enabled:
-                - \SprykerTest\Shared\Testify\Helper\Environment
-                - \SprykerTest\Zed\Testify\Helper\BusinessHelper
-
-env:
-    isolated:
-        modules:
-            config:
-                \SprykerTest\Shared\Testify\Helper\Environment:
-                    isolated: true
-                \SprykerTest\Shared\Transfer\Helper\TransferGenerateHelper:
-                    isolated: true
-                    schemaDirectories:
-                        - "src/SprykerSdk/Shared/ComposerReplace/Transfer/"
-                        - "vendor/spryker/*/src/Spryker/Shared/*/Transfer/"
+                - SprykerSdkTest\Zed\ComposerReplace\Helper\ComposerReplaceHelper

@@ -10,12 +10,12 @@ namespace SprykerSdk\Shared\ComposerReplace\Transfer;
 class ComposerReplaceResultCollectionTransfer
 {
     /**
-     * @var array<\SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResult>
+     * @var array<\SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultTransfer>
      */
-    protected $composerReplaceResults;
+    protected $composerReplaceResults = [];
 
     /**
-     * @return array<\SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResult>
+     * @return array<\SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultTransfer>
      */
     public function getComposerReplaceResults(): array
     {
@@ -23,13 +23,25 @@ class ComposerReplaceResultCollectionTransfer
     }
 
     /**
-     * @param array<\SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResult> $composerReplaceResults
+     * @param array<\SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultTransfer> $composerReplaceResults
      *
      * @return $this
      */
     public function setComposerReplaceResults(array $composerReplaceResults)
     {
         $this->composerReplaceResults = $composerReplaceResults;
+
+        return $this;
+    }
+
+    /**
+     * @param \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultTransfer $composerReplaceResult
+     *
+     * @return $this
+     */
+    public function addComposerReplaceResult(ComposerReplaceResultTransfer $composerReplaceResult)
+    {
+        $this->composerReplaceResults[] = $composerReplaceResult;
 
         return $this;
     }
