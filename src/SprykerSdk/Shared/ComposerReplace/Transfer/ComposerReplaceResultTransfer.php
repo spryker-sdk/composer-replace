@@ -36,7 +36,7 @@ class ComposerReplaceResultTransfer
     }
 
     /**
-     * @param array<\SprykerSdk\Shared\ComposerReplace\Transfer\ComposerPackageTransfer> $composerPackages
+     * @param array<\SprykerSdk\Shared\ComposerReplace\Transfer\ComposerPackageTransfer> $composerPackageTransfers
      *
      * @return $this
      */
