@@ -7,8 +7,8 @@
 
 namespace SprykerSdk\Zed\ComposerReplace\Business\ComposerReplace\Updater;
 
-use Generated\Shared\Transfer\ComposerReplaceResultCollectionTransfer;
-use Generated\Shared\Transfer\ComposerReplaceResultTransfer;
+use SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultCollectionTransfer;
+use SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultTransfer;
 use SprykerSdk\Zed\ComposerReplace\Business\ComposerReplace\Validator\ComposerReplaceValidatorInterface;
 use SprykerSdk\Zed\ComposerReplace\ComposerReplaceConfig;
 
@@ -28,7 +28,7 @@ class ComposerReplaceUpdater implements ComposerReplaceUpdaterInterface
     }
 
     /**
-     * @return \Generated\Shared\Transfer\ComposerReplaceResultCollectionTransfer
+     * @return \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultCollectionTransfer
      */
     public function update(): ComposerReplaceResultCollectionTransfer
     {
@@ -42,7 +42,7 @@ class ComposerReplaceUpdater implements ComposerReplaceUpdaterInterface
     }
 
     /**
-     * @param \Generated\Shared\Transfer\ComposerReplaceResultTransfer $composerReplaceResultTransfer
+     * @param \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultTransfer $composerReplaceResultTransfer
      *
      * @return void
      */
@@ -61,7 +61,7 @@ class ComposerReplaceUpdater implements ComposerReplaceUpdaterInterface
     }
 
     /**
-     * @param \Generated\Shared\Transfer\ComposerReplaceResultTransfer $composerReplaceResultTransfer
+     * @param \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultTransfer $composerReplaceResultTransfer
      * @param array $replace
      *
      * @return array
@@ -78,7 +78,7 @@ class ComposerReplaceUpdater implements ComposerReplaceUpdaterInterface
     }
 
     /**
-     * @param \Generated\Shared\Transfer\ComposerReplaceResultTransfer $composerReplaceResultTransfer
+     * @param \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultTransfer $composerReplaceResultTransfer
      * @param array $replace
      *
      * @return array

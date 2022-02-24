@@ -7,24 +7,44 @@
 
 namespace SprykerSdk\Zed\ComposerReplace\Communication\Console;
 
-use Generated\Shared\Transfer\ComposerPackageTransfer;
-use Generated\Shared\Transfer\ComposerReplaceResultCollectionTransfer;
-use Spryker\Zed\Kernel\Communication\Console\Console;
+use SprykerSdk\Shared\ComposerReplace\Transfer\ComposerPackageTransfer;
+use SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultCollectionTransfer;
+use SprykerSdk\Zed\ComposerReplace\Business\ComposerReplaceFacade;
+use SprykerSdk\Zed\ComposerReplace\Business\ComposerReplaceFacadeInterface;
 use SprykerSdk\Zed\ComposerReplace\ComposerReplaceConfig;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Helper\TableCell;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
-/**
- * @method \SprykerSdk\Zed\ComposerReplace\Business\ComposerReplaceFacadeInterface getFacade()
- */
-class ComposerReplaceConsole extends Console
+class ComposerReplaceConsole extends Command
 {
+    /**
+     * @var string
+     */
     public const COMMAND_NAME = 'dev:composer:replace';
+
+    /**
+     * @var string
+     */
     public const OPTION_DRY_RUN = 'dry-run';
+
+    /**
+     * @var string
+     */
     public const OPTION_DRY_RUN_SHORT = 'd';
+
+    /**
+     * @var \SprykerSdk\Zed\ComposerReplace\Business\ComposerReplaceFacadeInterface
+     */
+    protected $facade;
+
+    /**
+     * @var \Symfony\Component\Console\Output\OutputInterface
+     */
+    protected $output;
 
     /**
      * @return void
@@ -46,6 +66,8 @@ class ComposerReplaceConsole extends Console
      */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
+        $this->output = $output;
+
         if ($input->getOption(static::OPTION_DRY_RUN)) {
             return $this->runValidation();
         }
@@ -61,18 +83,18 @@ class ComposerReplaceConsole extends Console
         $composerReplaceResultCollectionTransfer = $this->getFacade()->validate();
 
         if ($this->isComposerReplaceComplete($composerReplaceResultCollectionTransfer)) {
-            return static::CODE_SUCCESS;
+            return static::SUCCESS;
         }
 
         if ($this->output->isVerbose()) {
             $this->outputValidationResult($composerReplaceResultCollectionTransfer);
         }
 
-        return static::CODE_ERROR;
+        return static::FAILURE;
     }
 
     /**
-     * @param \Generated\Shared\Transfer\ComposerReplaceResultCollectionTransfer $composerReplaceResultCollectionTransfer
+     * @param \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultCollectionTransfer $composerReplaceResultCollectionTransfer
      *
      * @return bool
      */
@@ -81,7 +103,7 @@ class ComposerReplaceConsole extends Console
         $isSuccess = true;
 
         foreach ($composerReplaceResultCollectionTransfer->getComposerReplaceResults() as $composerReplaceResultTransfer) {
-            if ($composerReplaceResultTransfer->getComposerPackages()->count() > 0) {
+            if (count($composerReplaceResultTransfer->getComposerPackages()) > 0) {
                 $isSuccess = false;
             }
         }
@@ -90,14 +112,14 @@ class ComposerReplaceConsole extends Console
     }
 
     /**
-     * @param \Generated\Shared\Transfer\ComposerReplaceResultCollectionTransfer $composerReplaceResultCollectionTransfer
+     * @param \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultCollectionTransfer $composerReplaceResultCollectionTransfer
      *
      * @return void
      */
     protected function outputValidationResult(ComposerReplaceResultCollectionTransfer $composerReplaceResultCollectionTransfer): void
     {
         foreach ($composerReplaceResultCollectionTransfer->getComposerReplaceResults() as $composerReplaceResultTransfer) {
-            if ($composerReplaceResultTransfer->getComposerPackages()->count() === 0) {
+            if (count($composerReplaceResultTransfer->getComposerPackages()) === 0) {
                 continue;
             }
 
@@ -114,7 +136,7 @@ class ComposerReplaceConsole extends Console
     }
 
     /**
-     * @param \Generated\Shared\Transfer\ComposerPackageTransfer $composerPackageTransfer
+     * @param \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerPackageTransfer $composerPackageTransfer
      *
      * @return string
      */
@@ -138,18 +160,18 @@ class ComposerReplaceConsole extends Console
             $this->outputUpdateResult($composerReplaceResultCollectionTransfer);
         }
 
-        return static::CODE_SUCCESS;
+        return static::SUCCESS;
     }
 
     /**
-     * @param \Generated\Shared\Transfer\ComposerReplaceResultCollectionTransfer $composerReplaceResultCollectionTransfer
+     * @param \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerReplaceResultCollectionTransfer $composerReplaceResultCollectionTransfer
      *
      * @return void
      */
     protected function outputUpdateResult(ComposerReplaceResultCollectionTransfer $composerReplaceResultCollectionTransfer): void
     {
         foreach ($composerReplaceResultCollectionTransfer->getComposerReplaceResults() as $composerReplaceResultTransfer) {
-            if ($composerReplaceResultTransfer->getComposerPackages()->count() === 0) {
+            if (count($composerReplaceResultTransfer->getComposerPackages()) === 0) {
                 continue;
             }
 
@@ -166,7 +188,7 @@ class ComposerReplaceConsole extends Console
     }
 
     /**
-     * @param \Generated\Shared\Transfer\ComposerPackageTransfer $composerPackageTransfer
+     * @param \SprykerSdk\Shared\ComposerReplace\Transfer\ComposerPackageTransfer $composerPackageTransfer
      *
      * @return string
      */
@@ -177,5 +199,29 @@ class ComposerReplaceConsole extends Console
         }
 
         return 'Removed from composer.json replace';
+    }
+
+    /**
+     * @return \SprykerSdk\Zed\ComposerReplace\Business\ComposerReplaceFacadeInterface
+     */
+    protected function getFacade(): ComposerReplaceFacadeInterface
+    {
+        if (!$this->facade) {
+            $this->facade = new ComposerReplaceFacade();
+        }
+
+        return $this->facade;
+    }
+
+    /**
+     * @param \SprykerSdk\Zed\ComposerReplace\Business\ComposerReplaceFacadeInterface $facade
+     *
+     * @return $this
+     */
+    public function setFacade(ComposerReplaceFacadeInterface $facade)
+    {
+        $this->facade = $facade;
+
+        return $this;
     }
 }

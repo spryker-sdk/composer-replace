@@ -7,11 +7,16 @@
 
 namespace SprykerSdk\Zed\ComposerReplace;
 
-use Spryker\Zed\Kernel\AbstractBundleConfig;
-
-class ComposerReplaceConfig extends AbstractBundleConfig
+class ComposerReplaceConfig
 {
+    /**
+     * @var string
+     */
     public const TYPE_MISSING = 'missing';
+
+    /**
+     * @var string
+     */
     public const TYPE_OBSOLETE = 'obsolete';
 
     /**
@@ -22,7 +27,7 @@ class ComposerReplaceConfig extends AbstractBundleConfig
      *
      * @api
      *
-     * @return string[]
+     * @return array<string>
      */
     public function getPathToRepositories(): array
     {
