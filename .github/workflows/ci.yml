@@ -13,7 +13,7 @@ env:
 
 jobs:
   validation:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
@@ -56,7 +56,7 @@ jobs:
         run: composer cs-check
 
   prefer-lowest:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
