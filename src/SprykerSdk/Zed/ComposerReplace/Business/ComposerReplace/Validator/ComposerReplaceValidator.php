@@ -187,7 +187,7 @@ class ComposerReplaceValidator implements ComposerReplaceValidatorInterface
     {
         if (!isset($this->composerPackageNames[$pathToRepository])) {
             $finder = new Finder();
-            $finder->files()->in($pathToRepository)->name('composer.json')->depth(2);
+            $finder->files()->in($pathToRepository)->name('composer.json')->depth(1);
 
             $composerNames = [];
             foreach ($finder as $splFileInfo) {
