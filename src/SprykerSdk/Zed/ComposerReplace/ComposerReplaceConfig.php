@@ -32,8 +32,9 @@ class ComposerReplaceConfig
     public function getPathToRepositories(): array
     {
         return [
-            'vendor/spryker/spryker/',
-            'vendor/spryker/spryker-shop/',
+            'src/Spryker/',
+            'src/SprykerShop/',
+            'src/SprykerFeature/',
         ];
     }
 }
