@@ -4,8 +4,8 @@
     "description": "ComposerReplace module",
     "license": "proprietary",
     "require": {
-        "php": ">=8.2",
-        "spryker/symfony": "^3.3.3"
+        "php": ">=8.3",
+        "spryker/symfony": "^3.5.0"
     },
     "require-dev": {
         "spryker/code-sniffer": "*",
